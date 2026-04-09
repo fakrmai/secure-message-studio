@@ -1,63 +1,51 @@
+```html id="fixfullhtml"
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <title>SecureMessage Studio</title>
-
   <link rel="stylesheet" href="assets/css/styles.css">
-
-  <!-- Crypto -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 </head>
 
 <body>
-
   <div class="container">
-    <h1>🔐 SecureMessage Studio</h1>
-
-    <!-- 🔐 CIFRADO -->
     <section class="card">
-      <h2>Cifrado / Descifrado</h2>
 
-      <textarea id="text" placeholder="Escribe tu mensaje..."></textarea>
-      <input type="text" id="key" placeholder="Clave secreta">
+      <h2>🔐 SecureMessage Studio</h2>
 
-      <div class="buttons">
-        <button onclick="encryptMessage()">Cifrar</button>
-        <button onclick="decryptMessage()">Descifrar</button>
+      <!-- DROP ZONE -->
+      <div id="dropZone" class="drop-zone">
+        Arrastra tu imagen aquí o haz click
       </div>
 
-      <textarea id="result" placeholder="Resultado..." readonly></textarea>
-    </section>
-
-    <!-- 🖼️ ESTEGANOGRAFÍA -->
-    <section class="card">
-      <h2>Ocultar mensaje en imagen</h2>
-
-      <div id="dropZone" class="drop-zone">
-  Arrastra tu imagen aquí o haz click
-</div>
-
+      <!-- INPUT -->
       <input type="file" id="imageInput" accept="image/*">
+
       <button onclick="clearImage()">Quitar imagen</button>
 
+      <!-- MENSAJE -->
       <textarea id="secretMessage" placeholder="Mensaje secreto..."></textarea>
+
+      <!-- CLAVE -->
       <input type="text" id="imageKey" placeholder="Clave secreta para la imagen">
 
+      <!-- BOTONES -->
       <div class="buttons">
         <button onclick="hideMessage()">Ocultar mensaje</button>
         <button onclick="extractMessage()">Extraer mensaje</button>
         <button onclick="downloadImage()">Descargar imagen</button>
       </div>
 
+      <!-- STATUS -->
       <div id="status" class="status"></div>
 
+      <!-- IMAGEN -->
       <img id="outputImage" style="max-width:100%; display:none;">
-    </section>
 
+    </section>
   </div>
 
   <script src="assets/js/main.js"></script>
-
 </body>
 </html>
+```

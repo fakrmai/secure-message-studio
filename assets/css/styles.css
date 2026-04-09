@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
   margin: 0;
   padding: 0;
@@ -230,4 +231,210 @@ button:hover {
 .drop-zone.dragover {
   background: rgba(0,255,159,0.1);
   box-shadow: 0 0 15px #00ff9f;
+=======
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #38bdf8;
+  font-size: 28px;
+  text-shadow: 0 0 10px rgba(56,189,248,0.6);
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  border-radius: 18px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h2 {
+  margin-bottom: 15px;
+  color: #e2e8f0;
+}
+
+textarea,
+input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  outline: none;
+  transition: 0.2s;
+}
+
+textarea::placeholder,
+input::placeholder {
+  color: #94a3b8;
+}
+
+textarea:focus,
+input:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 10px rgba(56,189,248,0.5);
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin: 15px 0;
+  flex-wrap: wrap;
+}
+
+button {
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+  box-shadow: 0 5px 20px rgba(56,189,248,0.4);
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(56,189,248,0.7);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+img {
+  border-radius: 12px;
+  margin-top: 15px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.7);
+  transition: 0.3s;
+}
+
+img:hover {
+  transform: scale(1.02);
+}
+
+.status {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  text-align: center;
+  display: none;
+}
+
+.status.success {
+  background: rgba(34,197,94,0.2);
+  color: #4ade80;
+}
+
+.status.error {
+  background: rgba(239,68,68,0.2);
+  color: #f87171;
+}
+
+/* 🟢 MODO HACKER */
+
+body {
+  background: black;
+  color: #00ff9f;
+  font-family: 'Courier New', monospace;
+}
+
+/* efecto scanlines */
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0,255,159,0.05),
+    rgba(0,255,159,0.05) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* glow general */
+h1, h2 {
+  color: #00ff9f;
+  text-shadow: 0 0 8px #00ff9f;
+}
+
+/* cards estilo terminal */
+.card {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid #00ff9f;
+  box-shadow: 0 0 20px rgba(0,255,159,0.2);
+}
+
+/* inputs tipo terminal */
+textarea, input {
+  background: black;
+  color: #00ff9f;
+  border: 1px solid #00ff9f;
+}
+
+/* cursor glow */
+textarea:focus, input:focus {
+  box-shadow: 0 0 10px #00ff9f;
+}
+
+/* botones hacker */
+button {
+  background: black;
+  border: 1px solid #00ff9f;
+  color: #00ff9f;
+  box-shadow: 0 0 10px #00ff9f;
+}
+
+button:hover {
+  background: #00ff9f;
+  color: black;
+}
+
+/* status tipo consola */
+.status {
+  font-family: monospace;
+  border: 1px solid #00ff9f;
+  background: rgba(0,255,159,0.05);
+  animation: flicker 0.2s infinite alternate;
+}
+
+@keyframes flicker {
+  from { opacity: 0.9; }
+  to { opacity: 1; }
+>>>>>>> 7671e05a137f88df0189fe95ddb7b17623eb13cd
 }
