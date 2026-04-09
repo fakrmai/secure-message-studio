@@ -281,3 +281,13 @@ function toggleKey() {
     input.type = "password";
   }
 }
+
+function toggleImageKey() {
+  const input = document.getElementById("imageKey");
+
+  if (input.type === "password") {
+    input.type = "text";
+  } else {
+    input.type = "password";
+  }
+}

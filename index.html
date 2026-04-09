@@ -47,7 +47,10 @@
 
       <textarea id="secretMessage" placeholder="Mensaje secreto..."></textarea>
 
-      <input type="text" id="imageKey" placeholder="Clave secreta para la imagen">
+      <div class="key-container">
+  <input type="password" id="imageKey" placeholder="Clave secreta para la imagen">
+  <button onclick="toggleImageKey()">👁</button>
+</div>
 
       <div class="buttons">
         <button onclick="hideMessage()">Ocultar mensaje</button>
