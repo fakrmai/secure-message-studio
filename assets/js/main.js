@@ -254,3 +254,20 @@ function decryptMessage() {
     showStatus("Clave incorrecta o mensaje inválido", "error");
   }
 }
+
+function copyResult() {
+  const result = document.getElementById("resultOutput").value;
+
+  if (!result) {
+    showStatus("No hay nada para copiar");
+    return;
+  }
+
+  navigator.clipboard.writeText(result)
+    .then(() => {
+      showStatus("Resultado copiado al portapapeles 📋");
+    })
+    .catch(() => {
+      showStatus("Error al copiar");
+    });
+}

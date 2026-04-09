@@ -126,3 +126,7 @@ img {
   background: rgba(0,255,159,0.1);
   box-shadow: 0 0 15px #00ff9f;
 }
+
+button {
+  margin-top: 10px;
+}
