@@ -18,7 +18,10 @@
       <h3>Cifrado / Descifrado</h3>
 
       <textarea id="messageInput" placeholder="Escribe tu mensaje..."></textarea>
-<input type="text" id="keyInput" placeholder="Clave secreta">
+<div class="key-container">
+  <input type="password" id="keyInput" placeholder="Clave secreta">
+  <button onclick="toggleKey()">👁</button>
+</div>
 
       <div class="buttons">
         <button onclick="encryptMessage()">Cifrar</button>

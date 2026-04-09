@@ -130,3 +130,12 @@ img {
 button {
   margin-top: 10px;
 }
+
+.key-container {
+  display: flex;
+  gap: 10px;
+}
+
+.key-container input {
+  flex: 1;
+}

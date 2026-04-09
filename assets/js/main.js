@@ -271,3 +271,13 @@ function copyResult() {
       showStatus("Error al copiar");
     });
 }
+
+function toggleKey() {
+  const input = document.getElementById("keyInput");
+
+  if (input.type === "password") {
+    input.type = "text";
+  } else {
+    input.type = "password";
+  }
+}
