@@ -12,6 +12,24 @@
 
       <h2>🔐 SecureMessage Studio</h2>
 
+      <!-- 🔹 CIFRADO -->
+      <h3>Cifrado / Descifrado</h3>
+
+      <textarea id="textInput" placeholder="Escribe tu mensaje..."></textarea>
+      <input type="text" id="cryptoKey" placeholder="Clave secreta">
+
+      <div class="buttons">
+        <button onclick="encryptMessage()">Cifrar</button>
+        <button onclick="decryptMessage()">Descifrar</button>
+      </div>
+
+      <textarea id="resultOutput" placeholder="Resultado..." readonly></textarea>
+
+      <hr style="margin:20px 0; border-color:#00ff9f;">
+
+      <!-- 🔹 ESTEGANOGRAFÍA -->
+      <h3>Ocultar mensaje en imagen</h3>
+
       <div id="dropZone" class="drop-zone">
         Arrastra tu imagen aquí o haz click
       </div>
