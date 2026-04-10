@@ -160,3 +160,29 @@ button {
   cursor: pointer;
   font-size: 18px;
 }
+
+.key-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.key-container input {
+  width: 100%;
+  padding-right: 45px; /* espacio para el botón */
+}
+
+.key-container button {
+  position: absolute;
+  right: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #00ff9f;
+}
+
+.key-container button:hover {
+  transform: scale(1.2);
+  text-shadow: 0 0 10px #00ff9f;
+}
