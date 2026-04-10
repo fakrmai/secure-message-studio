@@ -139,3 +139,24 @@ button {
 .key-container input {
   flex: 1;
 }
+
+.key-container {
+  position: relative;
+  width: 100%;
+}
+
+.key-container input {
+  width: 100%;
+  padding-right: 40px;
+}
+
+.key-container button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}

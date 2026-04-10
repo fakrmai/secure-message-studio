@@ -274,20 +274,26 @@ function copyResult() {
 
 function toggleKey() {
   const input = document.getElementById("keyInput");
+  const btn = document.getElementById("toggleKeyBtn");
 
   if (input.type === "password") {
     input.type = "text";
+    btn.textContent = "🙈";
   } else {
     input.type = "password";
+    btn.textContent = "👁";
   }
 }
 
 function toggleImageKey() {
   const input = document.getElementById("imageKey");
+  const btn = document.getElementById("toggleImageKeyBtn");
 
   if (input.type === "password") {
     input.type = "text";
+    btn.textContent = "🙈";
   } else {
     input.type = "password";
+    btn.textContent = "👁";
   }
 }
