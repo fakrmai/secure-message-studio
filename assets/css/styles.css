@@ -5,7 +5,6 @@
 }
 
 /* 🟢 MODO HACKER */
-
 body {
   background: black;
   color: #00ff9f;
@@ -81,6 +80,7 @@ button {
   cursor: pointer;
   border-radius: 8px;
   box-shadow: 0 0 10px #00ff9f;
+  margin-top: 10px;
 }
 
 button:hover {
@@ -127,27 +127,21 @@ img {
   box-shadow: 0 0 15px #00ff9f;
 }
 
-button {
-  margin-top: 10px;
-}
-
-.key-container {
-  display: flex;
-  gap: 10px;
-}
-
-.key-container input {
-  flex: 1;
-}
-
+/* 🔐 INPUT CON OJO (FIX FINAL PERFECTO) */
 .key-container {
   position: relative;
   width: 100%;
+  margin-bottom: 12px;
 }
 
 .key-container input {
   width: 100%;
-  padding-right: 40px;
+  padding: 12px;
+  padding-right: 45px; /* espacio para el ojo */
+  background: black;
+  color: #00ff9f;
+  border: 1px solid #00ff9f;
+  border-radius: 8px;
 }
 
 .key-container button {
@@ -158,31 +152,14 @@ button {
   background: transparent;
   border: none;
   cursor: pointer;
-  font-size: 18px;
-}
-
-.key-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.key-container input {
-  width: 100%;
-  padding-right: 45px; /* espacio para el botón */
-}
-
-.key-container button {
-  position: absolute;
-  right: 10px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
   font-size: 16px;
   color: #00ff9f;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
 }
 
 .key-container button:hover {
-  transform: scale(1.2);
+  transform: translateY(-50%) scale(1.2);
   text-shadow: 0 0 10px #00ff9f;
 }
