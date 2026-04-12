@@ -1,17 +1,3 @@
-// 🔊 SONIDOS (DEBE IR HASTA ARRIBA DE TODO)
-const sounds = {
-  click: new Audio("https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3"),
-  success: new Audio("https://assets.mixkit.co/sfx/preview/mixkit-unlock-game-notification-253.mp3"),
-  error: new Audio("https://assets.mixkit.co/sfx/preview/mixkit-error-126627.mp3")
-};
-
-function playSound(type) {
-  if (sounds[type]) {
-    sounds[type].currentTime = 0;
-    sounds[type].play();
-  }
-}
-
 // 🟢 STATUS UI
 function showStatus(message, type = "success") {
   const status = document.getElementById("status");
@@ -227,12 +213,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // 🔐 CIFRAR TEXTO
 function encryptMessage() {
+  console.log("CLICK DETECTADO"); {
   const message = document.getElementById("messageInput").value;
   const key = document.getElementById("keyInput").value;
   const output = document.getElementById("resultOutput");
 
   if (!message || !key) {
-    playSound("error");
     showStatus("Faltan datos");
     return;
   }
@@ -241,14 +227,11 @@ function encryptMessage() {
     const encrypted = CryptoJS.AES.encrypt(message, key).toString();
 
     fakeLoading(output, encrypted);
-playSound("success");
-
 
     showStatus("Mensaje cifrado correctamente");
   } catch (err) {
-  playSound("error");
-  showStatus("Error al cifrar");
-}
+    showStatus("Error al cifrar");
+  }
 }
 
 // 🔓 DESCIFRAR TEXTO
@@ -258,10 +241,9 @@ function decryptMessage() {
   const output = document.getElementById("resultOutput");
 
   if (!message || !key) {
-  playSound("error");
-  showStatus("Faltan datos");
-  return;
-}
+    showStatus("Faltan datos");
+    return;
+  }
 
   try {
     const bytes = CryptoJS.AES.decrypt(message, key);
@@ -357,7 +339,6 @@ function drawMatrix() {
 
 setInterval(drawMatrix, 33);
 
-// ajustar tamaño al redimensionar
 window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
@@ -377,4 +358,4 @@ function fakeLoading(textarea, finalText) {
     clearInterval(interval);
     textarea.value = finalText;
   }, 1500);
-}
+} }

@@ -27,13 +27,13 @@
       </div>
 
       <div class="buttons">
-  <button onclick="playSound('click'); encryptMessage()">Cifrar</button>
-  <button onclick="playSound('click'); decryptMessage()">Descifrar</button>
+        <button onclick="encryptMessage()">Cifrar</button>
+        <button onclick="decryptMessage()">Descifrar</button>
       </div>
 
       <textarea id="resultOutput" placeholder="Resultado..." readonly></textarea>
 
-      <button onclick="playSound('click'); copyResult()">📋 Copiar resultado</button>
+      <button onclick="copyResult()">📋 Copiar resultado</button>
 
       <hr style="margin:20px 0; border-color:#00ff9f;">
 
@@ -56,9 +56,9 @@
       </div>
 
       <div class="buttons">
-        <button onclick="playSound('click'); hideMessage()">Ocultar mensaje</button>
-        <button onclick="playSound('click'); extractMessage()">Extraer mensaje</button>
-        <button onclick="playSound('click'); downloadImage()">Descargar imagen</button>
+        <button onclick="hideMessage()">Ocultar mensaje</button>
+        <button onclick="extractMessage()">Extraer mensaje</button>
+        <button onclick="downloadImage()">Descargar imagen</button>
       </div>
 
       <div id="status" class="status"></div>
