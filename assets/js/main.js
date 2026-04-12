@@ -359,3 +359,22 @@ function fakeLoading(textarea, finalText) {
     textarea.value = finalText;
   }, 1500);
 } }
+
+function copyResult() {
+  const textarea = document.getElementById("resultOutput");
+
+  if (!textarea.value) {
+    showStatus("No hay nada para copiar");
+    return;
+  }
+
+  textarea.select();
+  textarea.setSelectionRange(0, 99999);
+
+  try {
+    document.execCommand("copy");
+    showStatus("Resultado copiado al portapapeles 📋");
+  } catch (err) {
+    showStatus("Error al copiar");
+  }
+}
