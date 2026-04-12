@@ -215,19 +215,22 @@ document.addEventListener("DOMContentLoaded", () => {
 function encryptMessage() {
   const message = document.getElementById("messageInput").value;
   const key = document.getElementById("keyInput").value;
-  const result = document.getElementById("resultOutput");
+  const output = document.getElementById("resultOutput");
 
   if (!message || !key) {
-    showStatus("Falta mensaje o clave", "error");
+    showStatus("Faltan datos");
     return;
   }
 
   try {
     const encrypted = CryptoJS.AES.encrypt(message, key).toString();
-    result.value = encrypted;
+
+    // 👇 AQUÍ entra la animación
+    fakeLoading(output, encrypted);
+
     showStatus("Mensaje cifrado correctamente");
-  } catch {
-    showStatus("Error al cifrar", "error");
+  } catch (err) {
+    showStatus("Error al cifrar");
   }
 }
 
@@ -235,10 +238,10 @@ function encryptMessage() {
 function decryptMessage() {
   const message = document.getElementById("messageInput").value;
   const key = document.getElementById("keyInput").value;
-  const result = document.getElementById("resultOutput");
+  const output = document.getElementById("resultOutput");
 
   if (!message || !key) {
-    showStatus("Falta mensaje o clave", "error");
+    showStatus("Faltan datos");
     return;
   }
 
@@ -246,12 +249,11 @@ function decryptMessage() {
     const bytes = CryptoJS.AES.decrypt(message, key);
     const decrypted = bytes.toString(CryptoJS.enc.Utf8);
 
-    if (!decrypted) throw new Error();
+    fakeLoading(output, decrypted);
 
-    result.value = decrypted;
     showStatus("Mensaje descifrado correctamente");
-  } catch {
-    showStatus("Clave incorrecta o mensaje inválido", "error");
+  } catch (err) {
+    showStatus("Error al descifrar");
   }
 }
 
@@ -342,3 +344,19 @@ window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 });
+
+function fakeLoading(textarea, finalText) {
+  let dots = "";
+  textarea.value = "Encrypting";
+
+  const interval = setInterval(() => {
+    dots += ".";
+    if (dots.length > 3) dots = "";
+    textarea.value = "Encrypting" + dots;
+  }, 300);
+
+  setTimeout(() => {
+    clearInterval(interval);
+    textarea.value = finalText;
+  }, 1500);
+}
