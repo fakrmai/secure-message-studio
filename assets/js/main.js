@@ -1,3 +1,17 @@
+// 🔊 SONIDOS (DEBE IR HASTA ARRIBA DE TODO)
+const sounds = {
+  click: new Audio("https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3"),
+  success: new Audio("https://assets.mixkit.co/sfx/preview/mixkit-unlock-game-notification-253.mp3"),
+  error: new Audio("https://assets.mixkit.co/sfx/preview/mixkit-error-126627.mp3")
+};
+
+function playSound(type) {
+  if (sounds[type]) {
+    sounds[type].currentTime = 0;
+    sounds[type].play();
+  }
+}
+
 // 🟢 STATUS UI
 function showStatus(message, type = "success") {
   const status = document.getElementById("status");
@@ -218,6 +232,7 @@ function encryptMessage() {
   const output = document.getElementById("resultOutput");
 
   if (!message || !key) {
+    playSound("error");
     showStatus("Faltan datos");
     return;
   }
@@ -225,13 +240,15 @@ function encryptMessage() {
   try {
     const encrypted = CryptoJS.AES.encrypt(message, key).toString();
 
-    // 👇 AQUÍ entra la animación
     fakeLoading(output, encrypted);
+playSound("success");
+
 
     showStatus("Mensaje cifrado correctamente");
   } catch (err) {
-    showStatus("Error al cifrar");
-  }
+  playSound("error");
+  showStatus("Error al cifrar");
+}
 }
 
 // 🔓 DESCIFRAR TEXTO
@@ -241,9 +258,10 @@ function decryptMessage() {
   const output = document.getElementById("resultOutput");
 
   if (!message || !key) {
-    showStatus("Faltan datos");
-    return;
-  }
+  playSound("error");
+  showStatus("Faltan datos");
+  return;
+}
 
   try {
     const bytes = CryptoJS.AES.decrypt(message, key);
