@@ -213,7 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // 🔐 CIFRAR TEXTO
 function encryptMessage() {
-  console.log("CLICK DETECTADO"); {
+  console.log("CLICK DETECTADO");
   const message = document.getElementById("messageInput").value;
   const key = document.getElementById("keyInput").value;
   const output = document.getElementById("resultOutput");
@@ -358,7 +358,7 @@ function fakeLoading(textarea, finalText) {
     clearInterval(interval);
     textarea.value = finalText;
   }, 1500);
-} }
+}
 
 function copyResult() {
   const textarea = document.getElementById("resultOutput");
